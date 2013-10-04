@@ -1,0 +1,39 @@
+<!DOCTYPE.html>
+
+<html ng-app>
+<head>
+  <title>Tic.Tac.Toe</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+</head>
+<body ng-controller="MainCtrl">
+	<header>tic . tac . toe</header>
+	<div class="container">
+		  <div class="row clearfix" ng-repeat="row in boxes">
+		    <!-- pass box, NOT box.value, into mark
+		         (so we are passing in an object, not a primitive) -->
+		    <div class="box" ng-click="mark(box);" ng-repeat="box in row">
+		      {{ box.value }}
+    	</div>
+		</div>
+  	</div>
+
+  <script src="angular.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Julius+Sans+One::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>
+</html>
+
